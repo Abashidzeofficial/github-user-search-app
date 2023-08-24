@@ -1,7 +1,8 @@
 ## GitHub User Search App
  ![Desktop - Dark](https://github.com/Abashidzeofficial/github-user-search-app/assets/114133338/34feee72-1e9e-44aa-8f20-30ce69aa581d)
 
-- This is a simple GitHub User Search App built with React and TypeScript. The app allows you to search for GitHub users and view their profiles.
+- This is a simple GitHub User Search App built with React and TypeScript.
+- The app allows you to search for GitHub users and view their profiles.
 
 ## Features
 
