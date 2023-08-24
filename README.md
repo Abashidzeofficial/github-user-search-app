@@ -1,17 +1,19 @@
-##GitHub User Search App
+## GitHub User Search App
 
 
 This is a simple GitHub User Search App built with React and TypeScript. The app allows you to search for GitHub users and view their profiles.
 
-Features
+## Features
+
 Search for GitHub users by username.
 Display user profiles with information like avatar, username, followers, and more.
-Technologies Used
-React: A JavaScript library for building user interfaces.
-TypeScript: A statically typed superset of JavaScript that enhances code quality.
-GitHub API: Used to fetch user data based on search queries.
-HTML5: The markup language used for structuring the app.
-CSS3: Used for styling the app's components and layout.
+
+## Technologies Used
+# React: A JavaScript library for building user interfaces.
+# TypeScript: A statically typed superset of JavaScript that enhances code quality.
+# GitHub API: Used to fetch user data based on search queries.
+# HTML5: The markup language used for structuring the app.
+# CSS3: Used for styling the app's components and layout.
 Create React App: A tool for quickly setting up a new React project.
 Getting Started
 Clone this repository: git clone https://github.com/your-username/github-user-search-app.git
