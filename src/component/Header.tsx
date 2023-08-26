@@ -5,8 +5,12 @@ import twitter from '../images/icon-twitter.svg';
 import githublink from '../images/icon-website.svg';
 import company from '../images/icon-company.svg';
 
+interface Headerprops {
+  input: string
+  setInput: (input: string) => void;
+}
 
-function Header() {
+const Header: React.FC<Headerprops> = ({ input, setInput }) => {
   return (
     <div className="search-container">
       <div className="github-information">

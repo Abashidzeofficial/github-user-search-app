@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './App.css';
 import './component/styles.css';
@@ -8,14 +8,22 @@ import sun from './images/icon-sun.svg';
 import searchIcon from './images/icon-search.svg';
 
 const App: React.FC = () => {
+  const [input, setInput] = useState("");
+
+  const handleSubmission = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setInput("");
+    console.log(input);
+  }
+
+  const handleChange = (e: any) => {
+    setInput(e.target.value);
+
+  };
   return (
-    <div className="wrapper">
+    <form className="wrapper" onSubmit={handleSubmission}>
       <div className="header-group">
         <p className="header-txt">devfinder</p>
-        {/* <div className='contrast-dark'>
-          <p className='dark'>DARK </p>
-          <img src={moon} alt="dark and light" className="dl" />
-        </div> */}
         <div className="contrast-light">
           <p className="light">LIGHT</p>
           <img src={sun} alt="sun-light" className="sun-light" />
@@ -23,16 +31,26 @@ const App: React.FC = () => {
       </div>
       <div className="input-group">
         <div className="input-graph">
-          <input type="text" className="input-txt" placeholder="Search GitHub users..." />
+          <input
+            type="text"
+            className="input-txt"
+            placeholder="Search GitHub users..."
+            value={input}
+            onChange={handleChange}
+          >
+          </input>
 
         </div>
         <button className="search-btn">Search</button>
         <img src={searchIcon} alt="searchIcon" className="search-icon" />
       </div>
       <div className="container">
-        <Header />
+        <Header
+          input={input}
+          setInput={setInput}
+        />
       </div>
-    </div>
+    </form>
   );
 }
 
