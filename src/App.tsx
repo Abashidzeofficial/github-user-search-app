@@ -27,9 +27,9 @@ const App: React.FC = () => {
 
   };
   return (
-    <form className="wrapper" onSubmit={handleSubmission}>
+    <form className={`wrapper ${theme === 'DARK' ? 'dark-theme' : 'light-theme'}`} onSubmit={handleSubmission}>
       <div className="header-group">
-        <p className="header-txt">devfinder</p>
+        <span className={`header-txt ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`} >devfinder</span>
         <div className="contrast-light">
           {theme === 'DARK' ? (
             <button className="them" onClick={handleTheme}>
@@ -47,7 +47,7 @@ const App: React.FC = () => {
         </div>
       </div>
       <div className="input-group">
-        <div className="input-graph">
+        <div className={`input-graph ${theme === 'LIGHT' ? 'light-theme' : 'dark-theme'}`}>
           <input
             type="text"
             className="input-txt"
