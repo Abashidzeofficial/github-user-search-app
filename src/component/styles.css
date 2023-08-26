@@ -70,10 +70,18 @@ body {
   font-weight: 700;
   line-height: 39px;
   color: #fff;
-  margin-top: -31px;
+  margin-top: -10px;
 }
-.sun-light {
+.sun-light,
+.moon-light {
   margin-bottom: 30px;
+  cursor: pointer;
+}
+.them {
+  display: flex;
+  gap: 13px;
+  background-color: transparent;
+  border: none;
 }
 .contrast-light {
   display: flex;

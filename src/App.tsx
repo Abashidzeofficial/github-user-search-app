@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import './App.css';
 import './component/styles.css';
 import Header from './component/Header';
@@ -9,6 +8,13 @@ import searchIcon from './images/icon-search.svg';
 
 const App: React.FC = () => {
   const [input, setInput] = useState("");
+  const [theme, setTheme] = useState("LIGHT");
+
+  const handleTheme = () => {
+    setTheme(theme === "LIGHT" ? "DARK" : "LIGHT");
+
+    console.log(theme);
+  }
 
   const handleSubmission = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,8 +31,19 @@ const App: React.FC = () => {
       <div className="header-group">
         <p className="header-txt">devfinder</p>
         <div className="contrast-light">
-          <p className="light">LIGHT</p>
-          <img src={sun} alt="sun-light" className="sun-light" />
+          {theme === 'DARK' ? (
+            <button className="them" onClick={handleTheme}>
+              <span className="light">LIGHT</span>
+              <img src={sun} alt="sun-light" className="sun-light" />
+            </button>
+          )
+            : (
+              <button className='them' onClick={handleTheme}>
+                <span className="light">DARK</span>
+                <img src={moon} alt="moon-light" className="moon-light" />
+              </button>
+            )}
+
         </div>
       </div>
       <div className="input-group">
