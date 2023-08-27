@@ -191,7 +191,7 @@ body {
   margin-left: 23px;
   width: 279px;
   height: 85px;
-  background-color: #141d2f;
+  /* background-color: #141d2f; */
   border-radius: 14px;
   padding-top: 5px;
   color: #b3b1b1;
@@ -205,11 +205,6 @@ body {
   justify-content: space-evenly;
 }
 
-.repo-number,
-.follower-number,
-.following-number {
-  color: #fff;
-}
 .social {
   display: flex;
   flex-direction: column;

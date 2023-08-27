@@ -29,10 +29,10 @@ const Header: React.FC<Headerprops> = ({ input, setInput, theme, setTheme }) => 
       <div className="bio">
         <span className={`bio ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</span>
       </div>
-      <div className="repo-follower">
-        <div className="repo">Repos <span className='repo-number'>5</span></div>
-        <div className="follower">Followers <span className='follower-number'>345</span></div>
-        <div className="following">Following<span className='following-number'>2</span> </div>
+      <div className={`repo-follower ${theme === 'DARK' ? 'dark-theme' : 'light-theme'}`}>
+        <div className="repo" >Repos <span className={`repo-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}>5</span></div>
+        <div className="follower">Followers <span className={`follower-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}>345</span></div>
+        <div className="following">Following<span className={`following-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}>2</span> </div>
       </div>
       <div className="social">
         <div className="address">
