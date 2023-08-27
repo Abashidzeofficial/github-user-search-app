@@ -12,7 +12,6 @@ const App: React.FC = () => {
 
   const handleTheme = () => {
     setTheme(theme === "LIGHT" ? "DARK" : "LIGHT");
-
     console.log(theme);
   }
 
@@ -38,8 +37,8 @@ const App: React.FC = () => {
             </button>
           )
             : (
-              <button className='them' onClick={handleTheme}>
-                <span className="light">DARK</span>
+              <button className='them' onClick={handleTheme} >
+                <span className="light-moon">DARK</span>
                 <img src={moon} alt="moon-light" className="moon-light" />
               </button>
             )}
@@ -47,10 +46,10 @@ const App: React.FC = () => {
         </div>
       </div>
       <div className="input-group">
-        <div className={`input-graph ${theme === 'LIGHT' ? 'light-theme' : 'dark-theme'}`}>
+        <div className="input-graph">
           <input
             type="text"
-            className="input-txt"
+            className={`input-txt ${theme === 'LIGHT' ? 'white-theme' : 'input-black'}`}
             placeholder="Search GitHub users..."
             value={input}
             onChange={handleChange}
@@ -58,13 +57,15 @@ const App: React.FC = () => {
           </input>
 
         </div>
-        <button className="search-btn">Search</button>
+        <button className="search-btn" disabled={!input}>Search</button>
         <img src={searchIcon} alt="searchIcon" className="search-icon" />
       </div>
       <div className="container">
         <Header
           input={input}
           setInput={setInput}
+          theme={theme}
+          setTheme={setTheme}
         />
       </div>
     </form>

@@ -5,8 +5,14 @@
   --text-color-dark: ;
   --text-color-black: #060606;
   --text-color-white: #faf8f8;
+  --input-black: #1e2a47;
+  --input-search-color: #ffffff;
+  --light-info: #4b6a9b;
+  --dark-info: #b3b1b1;
 }
-
+.search-bg {
+  background-color: var(--input-search-color);
+}
 .light-theme {
   background-color: var(--background-color-dark);
 }
@@ -18,6 +24,15 @@
 }
 .white-theme {
   color: var(--text-color-white);
+}
+.input-black {
+  background-color: var(--input-black);
+}
+.light-info {
+  color: var(--light-info);
+}
+.dark-info {
+  color: var(--dark-info);
 }
 
 * {
@@ -33,19 +48,19 @@ body {
 .search-container {
   width: 327px;
   height: 517px;
-  background-color: #1e2a47;
+  /* background-color: #1e2a47; */
   border-radius: 14px;
 }
 .input-txt {
   width: 327px;
   height: 60px;
-  background-color: #1e2a47;
+  /* background-color: #1e2a47; */
   border: none;
   border-radius: 14px;
 }
 .input-txt::placeholder {
   padding-left: 55px;
-  color: #fff;
+  color: #b3b1b1;
   font-size: 16px;
   font-weight: 400;
   line-height: 25px;
@@ -94,6 +109,13 @@ body {
   color: #fff;
   margin-top: -10px;
 }
+.light-moon {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 39px;
+  color: #4b6a9b;
+  margin-top: -10px;
+}
 .sun-light,
 .moon-light {
   margin-bottom: 30px;
@@ -135,11 +157,10 @@ body {
 }
 
 .github-name {
-  font-family: Space Mono;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
-  color: #fff;
+  /* color: #fff; */
   margin-left: -50px;
 }
 .github-username {
@@ -153,14 +174,14 @@ body {
   font-size: 13px;
   font-weight: 400;
   line-height: 19px;
-  color: #fff;
+  /* color: #fff; */
   margin-left: -50px;
 }
 .bio {
   display: flex;
   margin-top: 14px;
   padding-left: 18px;
-  color: #b3b1b1;
+  /* color: #b3b1b1; */
 }
 .repo-follower {
   display: flex;
@@ -200,9 +221,9 @@ body {
 .company-user,
 .github-user {
   padding-left: 15px;
-  color: #fff;
+  /* color: #b3b1b1; */
 }
 .location-user {
   padding-left: 20px;
-  color: #fff;
+  /* color: #fff; */
 }
