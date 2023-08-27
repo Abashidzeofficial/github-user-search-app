@@ -9,8 +9,8 @@ import searchIcon from './images/icon-search.svg';
 const App: React.FC = () => {
   const [input, setInput] = useState("");
   const [theme, setTheme] = useState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"    //rodesac windowsze defaultad gvaqvs darki avtomaturad daayenebs darks da piriqit laits
-
+    // window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"    //rodesac windowsze defaultad gvaqvs darki avtomaturad daayenebs darks da piriqit laits
+    "LIGHT"
   );
 
   const handleTheme = () => {
