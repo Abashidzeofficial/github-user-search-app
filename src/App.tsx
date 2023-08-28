@@ -13,12 +13,17 @@ const App: React.FC = () => {
     "LIGHT"
   );
 
+  //github user api
+
+  let api = "https://api.github.com/users/" + input;
+
+
   //get users information
 
-  const [photo, setPhoto] = useState<string>()
-  const [name, setName] = useState<string>()
-  const [username, setUsername] = useState<string | number>()
-  const [joined, setJoined] = useState<string | number>()
+  const [avatar, setAvatar] = useState<undefined>()
+  const [name, setName] = useState<string | undefined>()
+  const [username, setUsername] = useState()
+  const [joined, setJoined] = useState<string>()
   const [bio, setBio] = useState<string>()
   const [repo, setRepo] = useState<string>()
   const [follower, setFollower] = useState<string>()
@@ -28,7 +33,25 @@ const App: React.FC = () => {
   const [twitter, setTwitter] = useState<string>()
   const [company, setCompany] = useState<string>()
 
+  //convert users
+  const fetchUsers = async () => {
+    let response = await fetch(api);
+    let data = await response.json();
+    setAvatar(data.avatar_url);
+    setName(data.name);
+    setUsername(data.login);
+    setJoined(data.created_at);
+    setBio(data.bio);
+    setRepo(data.repos_url);
+    setFollower(data.followers_url);
+    setFollowing(data.following_url);
+    setLocation(data.location);
+    setBlog(data.blog);
+    setTwitter(data.twitter_username);
+    setCompany(data.company);
+  }
 
+  fetchUsers()
 
   const handleTheme = () => {
     setTheme(theme === "LIGHT" ? "DARK" : "LIGHT");
@@ -86,6 +109,18 @@ const App: React.FC = () => {
           setInput={setInput}
           theme={theme}
           setTheme={setTheme}
+          avatar={avatar}
+          name={name}
+          username={username}
+          joined={joined}
+          bio={bio}
+          repo={repo}
+          follower={follower}
+          following={follower}
+          location={location}
+          blog={blog}
+          company={company}
+
         />
       </div>
     </form>

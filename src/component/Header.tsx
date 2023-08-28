@@ -11,9 +11,34 @@ interface Headerprops {
   setInput: (input: string) => void;
   theme: string;
   setTheme: React.Dispatch<React.SetStateAction<string>>;
+  avatar: string | undefined;
+  name: string | undefined;
+  username: any;
+  joined: any;
+  bio: string | undefined;
+  repo: string | undefined;
+  follower: string | undefined;
+  following: string | undefined;
+  location: string | undefined;
+  blog: string | undefined;
+  company: string | undefined;
+
 }
 
-const Header: React.FC<Headerprops> = ({ input, setInput, theme, setTheme }) => {
+const Header: React.FC<Headerprops> = ({ input, setInput, theme,
+  setTheme,
+  avatar,
+  name,
+  username,
+  joined,
+  bio,
+  repo,
+  follower,
+  following,
+  location,
+  blog,
+  company,
+}) => {
   return (
     <div className={`search-container ${theme === 'LIGHT' ? 'search-bg' : 'input-black'}`}>
       <div className="github-information">
