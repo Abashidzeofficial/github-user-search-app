@@ -1,7 +1,7 @@
 import React from 'react'
 import profile from '../images/Oval.png';
 import locationuser from '../images/icon-location.svg';
-import twitter from '../images/icon-twitter.svg';
+import twittericon from '../images/icon-twitter.svg';
 import githublink from '../images/icon-website.svg';
 import companyicon from '../images/icon-company.svg';
 import '../component/styles.css';
@@ -17,13 +17,14 @@ interface Headerprops {
   username: any;
   joined: any;
   bio: string | undefined;
-  repo: string | undefined;
+  repos: number | undefined;
   follower: string | undefined;
   following: string | undefined;
   location: string | undefined;
   blog: string | undefined;
-  company: string | undefined;
+  company: any | undefined;
   data: any[];
+  twitter: string;
 
 }
 
@@ -34,13 +35,14 @@ const Header: React.FC<Headerprops> = ({ input, setInput, theme,
   username,
   joined,
   bio,
-  repo,
+  repos,
   follower,
   following,
   location,
   blog,
   company,
   data,
+  twitter
 
 }) => {
   return (
@@ -60,23 +62,23 @@ const Header: React.FC<Headerprops> = ({ input, setInput, theme,
         <span className={`bio ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{bio}Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</span>
       </div>
       <div className={`repo-follower ${theme === 'DARK' ? 'dark-theme' : 'light-theme'}`}>
-        <div className="repo" >Repos<span className={`repo-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}>5 </span></div>
-        <div className="follower">Followers  <span className={`follower-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}>345 </span></div>
-        <div className="following">Following<span className={`following-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}>2</span> </div>
+        <div className="repo" >Repos<span className={`repo-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}>{repos}</span></div>
+        <div className="follower">Followers  <span className={`follower-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}>{follower}</span></div>
+        <div className="following">Following<span className={`following-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}> {following}</span> </div>
       </div>
       <div className="social">
         <div className="address">
           <img src={locationuser} alt="location" className="location" />
-          <a className={`location-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>San Francisco {location}</a>
+          <a className={`location-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}> {location}</a>
         </div>
         <div className="github-link"> <img src={githublink} alt="githublink" className="link-github" />
-          <a className={`github-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>github.com</a>
+          <a className={`github-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{blog}</a>
         </div>
-        <div className="twitter"><img src={twitter} alt="" className="twitter-icon" />
-          <a className={`twitter-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>@abashidze</a>
+        <div className="twitter"><img src={twittericon} alt="" className="twitter-icon" />
+          <a className={`twitter-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{twitter}</a>
         </div>
         <div className="company"><img src={companyicon} alt="company" className="company-icon" />
-          <a className={`company-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>@dials</a>
+          <a className={`company-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{company === undefined || company === "" ? "not available" : company}</a>
         </div>
       </div>
     </div >

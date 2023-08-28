@@ -26,13 +26,14 @@ const App: React.FC = () => {
   const [username, setUsername] = useState()
   const [joined, setJoined] = useState<string>()
   const [bio, setBio] = useState<string>()
-  const [repo, setRepo] = useState<string>()
+  const [repos, setRepos] = useState<number | undefined>()
   const [follower, setFollower] = useState<string>()
   const [following, setFollowing] = useState<string>()
   const [location, setLocation] = useState<string>()
   const [blog, setBlog] = useState<string>()
-  const [twitter, setTwitter] = useState<string>()
+  const [twitter, setTwitter] = useState<any>()
   const [company, setCompany] = useState<string>()
+
 
   //convert users
   const fetchUsers = async () => {
@@ -45,9 +46,9 @@ const App: React.FC = () => {
     setUsername(data.login);
     setJoined(data.created_at);
     setBio(data.bio);
-    setRepo(data.repos_url);
-    setFollower(data.followers_url);
-    setFollowing(data.following_url);
+    setRepos(data.repos);
+    setFollower(data.followers);
+    setFollowing(data.following);
     setLocation(data.location);
     setBlog(data.blog);
     setTwitter(data.twitter_username);
@@ -121,18 +122,22 @@ const App: React.FC = () => {
           username={username}
           joined={joined}
           bio={bio}
-          repo={repo}
+          repos={repos}
           follower={follower}
-          following={follower}
+          following={following}
           location={location}
           blog={blog}
           company={company}
           data={data}
-
+          twitter={twitter}
         />
+
       </div>
+
     </div>
+
   );
 }
+
 
 export default App;
