@@ -1,9 +1,9 @@
 import React from 'react'
 import profile from '../images/Oval.png';
-import location from '../images/icon-location.svg';
+import locationuser from '../images/icon-location.svg';
 import twitter from '../images/icon-twitter.svg';
 import githublink from '../images/icon-website.svg';
-import company from '../images/icon-company.svg';
+import companyicon from '../images/icon-company.svg';
 import '../component/styles.css';
 
 interface Headerprops {
@@ -11,8 +11,8 @@ interface Headerprops {
   setInput: (input: string) => void;
   theme: string;
   setTheme: React.Dispatch<React.SetStateAction<string>>;
-  avatar: string | undefined;
-  name: string | undefined;
+  avatar: null | string;
+  name: null | string;
   username: any;
   joined: any;
   bio: string | undefined;
@@ -62,7 +62,7 @@ const Header: React.FC<Headerprops> = ({ input, setInput, theme,
       </div>
       <div className="social">
         <div className="address">
-          <img src={location} alt="location" className="location" />
+          <img src={locationuser} alt="location" className="location" />
           <a className={`location-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>San Francisco</a>
         </div>
         <div className="github-link"> <img src={githublink} alt="githublink" className="link-github" />
@@ -71,7 +71,7 @@ const Header: React.FC<Headerprops> = ({ input, setInput, theme,
         <div className="twitter"><img src={twitter} alt="" className="twitter-icon" />
           <a className={`twitter-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>@abashidze</a>
         </div>
-        <div className="company"><img src={company} alt="company" className="company-icon" />
+        <div className="company"><img src={companyicon} alt="company" className="company-icon" />
           <a className={`company-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>@dials</a>
         </div>
       </div>

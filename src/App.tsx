@@ -15,13 +15,13 @@ const App: React.FC = () => {
 
   //github user api
 
-  let api = "https://api.github.com/users/" + input;
+  // let api = "https://api.github.com/users/Abashidzeofficial";
 
 
   //get users information
-
-  const [avatar, setAvatar] = useState<undefined>()
-  const [name, setName] = useState<string | undefined>()
+  const [data, setData] = useState<any[]>([]);
+  const [avatar, setAvatar] = useState<null | string>()
+  const [name, setName] = useState<null | string>()
   const [username, setUsername] = useState()
   const [joined, setJoined] = useState<string>()
   const [bio, setBio] = useState<string>()
@@ -35,10 +35,14 @@ const App: React.FC = () => {
 
   //convert users
   const fetchUsers = async () => {
-    let response = await fetch(api);
+    let response = await fetch("https://api.github.com/users/octocat");
+    // console.log(response);
     let data = await response.json();
+    // console.log(data);
+    setData(data);
     setAvatar(data.avatar_url);
     setName(data.name);
+    console.log(data.name);
     setUsername(data.login);
     setJoined(data.created_at);
     setBio(data.bio);
@@ -49,27 +53,34 @@ const App: React.FC = () => {
     setBlog(data.blog);
     setTwitter(data.twitter_username);
     setCompany(data.company);
+    console.log(avatar, name, location);
   }
 
-  fetchUsers()
+  console.log(avatar, name, location);
+  // fetchUsers()
+
+
 
   const handleTheme = () => {
     setTheme(theme === "LIGHT" ? "DARK" : "LIGHT");
     console.log(theme);
   }
 
-  const handleSubmission = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setInput("");
-    console.log(input);
-  }
+  // const handleSubmission = (e: React.ChangeEvent<HTMLFormElement>) => {
+
+  //   e.preventDefault();
+  //   fetchUsers()
+  //   setInput("");
+
+  //   // console.log(input);
+  // }
 
   const handleChange = (e: any) => {
     setInput(e.target.value);
 
   };
   return (
-    <form className={`wrapper ${theme === 'DARK' ? 'dark-theme' : 'light-theme'}`} onSubmit={handleSubmission}>
+    <div className={`wrapper ${theme === 'DARK' ? 'dark-theme' : 'light-theme'}`} >
       <div className="header-group">
         <span className={`header-txt ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`} >devfinder</span>
         <div className="contrast-light">
@@ -100,7 +111,7 @@ const App: React.FC = () => {
           </input>
 
         </div>
-        <button className="search-btn" disabled={!input}>Search</button>
+        <button className="search-btn" disabled={!input} onClick={fetchUsers} >Search </button>
         <img src={searchIcon} alt="searchIcon" className="search-icon" />
       </div>
       <div className="container">
@@ -123,7 +134,7 @@ const App: React.FC = () => {
 
         />
       </div>
-    </form>
+    </div>
   );
 }
 
