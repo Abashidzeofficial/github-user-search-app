@@ -13,6 +13,23 @@ const App: React.FC = () => {
     "LIGHT"
   );
 
+  //get users information
+
+  const [photo, setPhoto] = useState<string>()
+  const [name, setName] = useState<string>()
+  const [username, setUsername] = useState<string | number>()
+  const [joined, setJoined] = useState<string | number>()
+  const [bio, setBio] = useState<string>()
+  const [repo, setRepo] = useState<string>()
+  const [follower, setFollower] = useState<string>()
+  const [following, setFollowing] = useState<string>()
+  const [location, setLocation] = useState<string>()
+  const [blog, setBlog] = useState<string>()
+  const [twitter, setTwitter] = useState<string>()
+  const [company, setCompany] = useState<string>()
+
+
+
   const handleTheme = () => {
     setTheme(theme === "LIGHT" ? "DARK" : "LIGHT");
     console.log(theme);

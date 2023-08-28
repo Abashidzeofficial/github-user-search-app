@@ -25,6 +25,7 @@ const Header: React.FC<Headerprops> = ({ input, setInput, theme, setTheme }) => 
           <div className='github-username'><a>@abashidzeoffcial</a></div>
           <div className={`joined ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}><a>joined</a></div>
         </div>
+
       </div>
       <div className="bio">
         <span className={`bio ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</span>
