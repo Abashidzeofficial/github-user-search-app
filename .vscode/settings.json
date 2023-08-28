@@ -4,6 +4,8 @@
         "devfinder",
         "githublink",
         "Headerprops",
-        "locationuser"
+        "locationuser",
+        "profileavatar",
+        "profilename"
     ]
 }

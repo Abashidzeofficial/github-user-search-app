@@ -12,16 +12,17 @@ const App: React.FC = () => {
     // window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"    //rodesac windowsze defaultad gvaqvs darki avtomaturad daayenebs darks da piriqit laits
     "LIGHT"
   );
+  const [value, setValue] = useState("Abashidzeofficial");
 
   //github user api
 
-  // let api = "https://api.github.com/users/Abashidzeofficial";
+  let api = "https://api.github.com/users/" + input;
 
 
   //get users information
   const [data, setData] = useState<any[]>([]);
-  const [avatar, setAvatar] = useState<null | string>()
-  const [name, setName] = useState<null | string>()
+  const [avatar, setAvatar] = useState<any>()
+  const [name, setName] = useState<any>()
   const [username, setUsername] = useState()
   const [joined, setJoined] = useState<string>()
   const [bio, setBio] = useState<string>()
@@ -35,14 +36,12 @@ const App: React.FC = () => {
 
   //convert users
   const fetchUsers = async () => {
-    let response = await fetch("https://api.github.com/users/octocat");
-    // console.log(response);
+    let response = await fetch(api);
     let data = await response.json();
-    // console.log(data);
     setData(data);
     setAvatar(data.avatar_url);
     setName(data.name);
-    console.log(data.name);
+    // console.log(data.name);
     setUsername(data.login);
     setJoined(data.created_at);
     setBio(data.bio);
@@ -53,10 +52,9 @@ const App: React.FC = () => {
     setBlog(data.blog);
     setTwitter(data.twitter_username);
     setCompany(data.company);
-    console.log(avatar, name, location);
   }
 
-  console.log(avatar, name, location);
+
   // fetchUsers()
 
 
@@ -72,8 +70,6 @@ const App: React.FC = () => {
   //   fetchUsers()
   //   setInput("");
 
-  //   // console.log(input);
-  // }
 
   const handleChange = (e: any) => {
     setInput(e.target.value);
@@ -131,6 +127,7 @@ const App: React.FC = () => {
           location={location}
           blog={blog}
           company={company}
+          data={data}
 
         />
       </div>
