@@ -93,6 +93,7 @@ body {
   font-size: 17px;
   margin-left: 235px;
   margin-top: -33px;
+  cursor: pointer;
 }
 .wrapper {
   display: flex;
