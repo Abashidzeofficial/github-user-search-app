@@ -98,6 +98,8 @@ body {
 .header-group {
   display: flex;
   gap: 120px;
+  width: 100%;
+  justify-content: center;
 }
 .contrast-dark {
   display: flex;
@@ -226,4 +228,72 @@ body {
   width: 117px;
   height: 117px;
   border-radius: 130px;
+}
+@media only screen and (min-width: 765px) {
+  .search-container {
+    width: 573px;
+    height: 520px;
+  }
+
+  .input-group {
+    width: 573px;
+    height: 69px;
+    background-color: #1e2a47;
+    border-radius: 14px;
+  }
+  .search-btn {
+    position: absolute;
+    margin-left: 463px;
+    margin-top: -45px;
+  }
+  .search-icon {
+    margin-top: -35px;
+    margin-left: 32px;
+  }
+  .input-txt {
+    width: 327px;
+    height: 34px;
+    /* background-color: #1e2a47; */
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    margin-top: 20px;
+    margin-left: 70px;
+    background-color: transparent;
+  }
+  .input-txt::placeholder {
+    padding-left: 50px;
+    color: #b3b1b1;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  .header-group {
+    display: flex;
+    gap: 165px;
+    width: 100%;
+    /* flex-direction: row; */
+    justify-content: space-around;
+  }
+  .input-txt {
+    font-size: 25px;
+  }
+  .repo-follower {
+    width: 493px;
+    height: 85px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .social {
+    display: grid;
+    margin-left: 99px;
+    margin-top: 49px;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .address,
+  .twitter {
+    margin-left: -48px;
+  }
 }

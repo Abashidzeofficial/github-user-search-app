@@ -13,6 +13,7 @@ const App: React.FC = () => {
     "LIGHT"
   );
   const [value, setValue] = useState("Abashidzeofficial");
+  const [show, setShow] = useState(false);
 
   //github user api
 
@@ -43,7 +44,6 @@ const App: React.FC = () => {
     setData(data);
     setAvatar(data.avatar_url);
     setName(data.name);
-    // console.log(data.name);
     setUsername(data.login);
     setJoined(data.created_at);
     setBio(data.bio);
@@ -63,15 +63,13 @@ const App: React.FC = () => {
 
   const handleTheme = () => {
     setTheme(theme === "LIGHT" ? "DARK" : "LIGHT");
-    console.log(theme);
   }
 
-  // const handleSubmission = (e: React.ChangeEvent<HTMLFormElement>) => {
+  const handleSubmission = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setInput("");
 
-  //   e.preventDefault();
-  //   fetchUsers()
-  //   setInput("");
-
+  }
 
   const handleChange = (e: any) => {
     setInput(e.target.value);
@@ -97,12 +95,12 @@ const App: React.FC = () => {
 
         </div>
       </div>
-      <div className="input-group">
-        <div className="input-graph">
+      <form className="input-group" onSubmit={handleSubmission}>
+        <div className="input-graph" >
           <input
             type="text"
             className={`input-txt ${theme === 'LIGHT' ? 'white-theme' : 'input-black'}`}
-            placeholder="Search GitHub users..."
+            placeholder="Search GitHub username..."
             value={input}
             onChange={handleChange}
           >
@@ -111,7 +109,7 @@ const App: React.FC = () => {
         </div>
         <button className="search-btn" disabled={!input} onClick={fetchUsers} >Search </button>
         <img src={searchIcon} alt="searchIcon" className="search-icon" />
-      </div>
+      </form>
       <div className="container">
         <Header
           input={input}
