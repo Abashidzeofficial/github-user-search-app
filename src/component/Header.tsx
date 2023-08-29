@@ -60,7 +60,7 @@ const Header: React.FC<Headerprops> = ({ input, setInput, theme,
 
       </div>
       <div className="bio">
-        <span className={`bio ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{bio}Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</span>
+        <span className={`bio ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{bio}This profile no bio</span>
       </div>
       <div className={`repo-follower ${theme === 'DARK' ? 'dark-theme' : 'light-theme'}`}>
         <div className="repo" >Repos<span className={`repo-number ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}>{repos}</span></div>

@@ -95,11 +95,11 @@ const App: React.FC = () => {
 
         </div>
       </div>
-      <form className="input-group" onSubmit={handleSubmission}>
+      <form className={`input-group ${theme === 'LIGHT' ? 'search-bg' : 'input-black'}`} onSubmit={handleSubmission}>
         <div className="input-graph" >
           <input
             type="text"
-            className={`input-txt ${theme === 'LIGHT' ? 'white-theme' : 'input-black'}`}
+            className="input-txt"
             placeholder="Search GitHub username..."
             value={input}
             onChange={handleChange}
