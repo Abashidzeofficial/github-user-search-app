@@ -47,7 +47,7 @@ body {
 }
 .search-container {
   width: 327px;
-  height: 517px;
+  height: 565px;
   /* background-color: #1e2a47; */
   border-radius: 14px;
 }
@@ -153,7 +153,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-left: -35px;
+  margin-left: -2px;
 }
 
 .github-name {
@@ -221,4 +221,9 @@ body {
 .location-user {
   padding-left: 20px;
   /* color: #fff; */
+}
+.profile-icon {
+  width: 117px;
+  height: 117px;
+  border-radius: 130px;
 }

@@ -12,12 +12,12 @@ interface Headerprops {
   // setName: (name: string) => void;
   theme: string;
   setTheme: React.Dispatch<React.SetStateAction<string>>;
-  avatar: null | string;
+  avatar: any;
   name: null | string;
   username: any;
   joined: any;
   bio: string | undefined;
-  repos: number | undefined;
+  repos: string;
   follower: string | undefined;
   following: string | undefined;
   location: string | undefined;
@@ -27,6 +27,7 @@ interface Headerprops {
   twitter: string;
 
 }
+
 
 const Header: React.FC<Headerprops> = ({ input, setInput, theme,
   setTheme,
@@ -49,11 +50,11 @@ const Header: React.FC<Headerprops> = ({ input, setInput, theme,
     <div className={`search-container ${theme === 'LIGHT' ? 'search-bg' : 'input-black'}`}>
       <div className="github-information">
         <a className='profile-img'>
-          <img src={profile} alt="profile-img" className="profile-icon" />
+          <img src={avatar} alt="profile-img" className="profile-icon" />
         </a>
         <div className="user-info">
           <div className={`github-name ${theme === 'LIGHT' ? 'black-theme' : 'white-theme'}`}><a>{name}</a></div>
-          <div className='github-username'><a> {username}</a></div>
+          <div className='github-username'><a>{username}</a></div>
           <div className={`joined ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}><a>{joined}</a></div>
         </div>
 
@@ -69,16 +70,16 @@ const Header: React.FC<Headerprops> = ({ input, setInput, theme,
       <div className="social">
         <div className="address">
           <img src={locationuser} alt="location" className="location" />
-          <a className={`location-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}> {location}</a>
+          <a className={`location-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}> {location === null || location === "undefined" ? "not available" : location}</a>
         </div>
         <div className="github-link"> <img src={githublink} alt="githublink" className="link-github" />
-          <a className={`github-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{blog}</a>
+          <a className={`github-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{blog === null || blog === "undefined" ? "not available" : blog}</a>
         </div>
         <div className="twitter"><img src={twittericon} alt="" className="twitter-icon" />
-          <a className={`twitter-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{twitter}</a>
+          <a className={`twitter-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{twitter === null || twitter === "undefined" ? "not available" : twitter}</a>
         </div>
         <div className="company"><img src={companyicon} alt="company" className="company-icon" />
-          <a className={`company-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{company === undefined || company === "" ? "not available" : company}</a>
+          <a className={`company-user ${theme === 'LIGHT' ? 'light-info' : 'dark-info'}`}>{company === null || company === "undefined" ? "not available" : company}</a>
         </div>
       </div>
     </div >

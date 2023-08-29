@@ -26,13 +26,14 @@ const App: React.FC = () => {
   const [username, setUsername] = useState()
   const [joined, setJoined] = useState<string>()
   const [bio, setBio] = useState<string>()
-  const [repos, setRepos] = useState<number | undefined>()
+  const [repos, setRepos] = useState<any>()
   const [follower, setFollower] = useState<string>()
   const [following, setFollowing] = useState<string>()
   const [location, setLocation] = useState<string>()
   const [blog, setBlog] = useState<string>()
   const [twitter, setTwitter] = useState<any>()
   const [company, setCompany] = useState<string>()
+
 
 
   //convert users
@@ -46,7 +47,7 @@ const App: React.FC = () => {
     setUsername(data.login);
     setJoined(data.created_at);
     setBio(data.bio);
-    setRepos(data.repos);
+    setRepos(data.public_repos.toString());
     setFollower(data.followers);
     setFollowing(data.following);
     setLocation(data.location);
