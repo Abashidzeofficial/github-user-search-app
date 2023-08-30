@@ -13,7 +13,7 @@ const App: React.FC = () => {
     "LIGHT"
   );
   const [value, setValue] = useState("Abashidzeofficial");
-  const [show, setShow] = useState(false);
+
 
   //github user api
 
@@ -34,7 +34,7 @@ const App: React.FC = () => {
   const [blog, setBlog] = useState<string>()
   const [twitter, setTwitter] = useState<any>()
   const [company, setCompany] = useState<string>()
-
+  const [show, setShow] = useState(false);
 
 
   //convert users
@@ -68,11 +68,16 @@ const App: React.FC = () => {
   const handleSubmission = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     setInput("");
+    setShow(input.trim() !== ""); // Set show to true if input is not empty
+    if (input.trim() !== "") {
+      fetchUsers();
+    }
 
   }
 
   const handleChange = (e: any) => {
     setInput(e.target.value);
+    // setShow(e.target.value.trim() !== ""); // Set show based on input valued
 
   };
   return (
@@ -110,7 +115,7 @@ const App: React.FC = () => {
         <button className="search-btn" disabled={!input} onClick={fetchUsers} >Search </button>
         <img src={searchIcon} alt="searchIcon" className="search-icon" />
       </form>
-      <div className="container">
+      {show && (<div className="container">
         <Header
           input={input}
           setInput={setInput}
@@ -130,8 +135,8 @@ const App: React.FC = () => {
           data={data}
           twitter={twitter}
         />
-
       </div>
+      )}
 
     </div>
 

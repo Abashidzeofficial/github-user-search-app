@@ -59,6 +59,7 @@ body {
   border-radius: 14px;
   margin-left: 40px;
   margin-top: 20px;
+  outline: none;
 }
 
 .input-txt::placeholder {
@@ -344,7 +345,7 @@ body {
   }
   .header-group {
     display: flex;
-    gap: 70px;
+    gap: 30px;
     width: 100%;
     justify-content: space-evenly;
   }
