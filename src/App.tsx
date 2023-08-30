@@ -68,8 +68,8 @@ const App: React.FC = () => {
   const handleSubmission = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     setInput("");
-    setShow(input.trim() !== ""); // Set show to true if input is not empty
-    if (input.trim() !== "") {
+    setShow(input !== ""); // Set show to true if input is not empty
+    if (input !== "") {
       fetchUsers();
     }
 
