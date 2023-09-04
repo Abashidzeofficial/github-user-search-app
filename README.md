@@ -3,7 +3,7 @@
 # Frontend Mentor - GitHub user search app
 
 -Live Site https://github-user-search-app-nine-gamma.vercel.app/
-![Design preview for the GitHub user search app coding challenge](./preview.jpg)
+
 
  ![Desktop - Dark](https://github.com/Abashidzeofficial/github-user-search-app/assets/114133338/34feee72-1e9e-44aa-8f20-30ce69aa581d)
 ## Welcome! 👋
