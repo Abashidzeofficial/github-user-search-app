@@ -30,7 +30,7 @@ Thanks for purchasing this premium Frontend Mentor coding challenge.
 
 ## Contributing
  - Contributions are welcome! If you find any bugs or want to improve the app, feel free to open an issue or submit a pull request.
-## The challenge
+
 
 ## Author
 - Giorgi abashidze
